@@ -10,10 +10,9 @@ try {
 
 registerSW()
   .then(() => {
-    window.open(
-      __uv$config.prefix + __uv$config.encodeUrl(destination),
-      "_self"
-    );
+    setTimeout(() => {
+      location.href = __uv$config.prefix + __uv$config.encodeUrl(destination)
+    }, 1000);
   })
   .catch((err) => {
     alert(`Encountered error:\n${err}`);
